@@ -1,12 +1,31 @@
 package com.test.mvnmyExample;
 
+import org.junit.Assert;
+import org.junit.Test;
+
+/**
+ * Tests TriNum
+ */
+
 public class TestSum {
-	private int[] refArray = {0,1,6,10,15,21,28,36,45,55,66,78,91,105}; //14 numbers, including zero
-	
-	public boolean TestCumSum(int CumSum, int sizeOfArray){//only works if sizeOfArray <=14, otherwise will return 
-		if(refArray[sizeOfArray-1]==CumSum){				// false by default
-			return true;
-		}
-		else return false;
+
+	@Test
+	public void testCumCount() {
+		testCumCount(200);
 	}
+
+	private void testCumCount(int sizeOfArray) {
+		if (sizeOfArray <= 0) { // array size must be positive
+			System.out.println("Invalid Number: Enter a value greater than zero");
+		}
+
+		int[] theArray = TriNum.popArray(sizeOfArray);// initialising the array
+
+		int cumCountNum = TriNum.cumCount(theArray);// performing a cumulative
+													// sum of numbers in array
+
+		Assert.assertEquals(sizeOfArray * (sizeOfArray - 1) / 2, cumCountNum);
+
+	}
+
 }
