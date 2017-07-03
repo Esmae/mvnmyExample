@@ -19,9 +19,9 @@ public class TestSum {
 			System.out.println("Invalid Number: Enter a value greater than zero");
 		}
 
-		int[] theArray = TriNum.popArray(sizeOfArray);// initialising the array
+		int[] theArray = IntTriNum.popArray(sizeOfArray);// initialising the array
 
-		int cumCountNum = TriNum.cumCount(theArray);// performing a cumulative
+		int cumCountNum = IntTriNum.cumCount(theArray);// performing a cumulative
 													// sum of numbers in array
 
 		Assert.assertEquals(sizeOfArray * (sizeOfArray - 1) / 2, cumCountNum);
