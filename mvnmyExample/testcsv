@@ -1,0 +1,8 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: size"
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,247442033.756722,507638.435859,"ops/s",2
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,102105874.491766,467420.052163,"ops/s",20
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,15664582.957017,51920.432976,"ops/s",200
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,1539884.864290,595.689095,"ops/s",2000
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,15398.069565,4.451439,"ops/s",200000
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,1467.945232,6.560145,"ops/s",2000000
+"com.test.mvnmyExample.MyBenchmark.testMethod","thrpt",1,200,139.654977,0.482286,"ops/s",20000000

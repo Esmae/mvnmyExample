@@ -1,0 +1,15 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: size"
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,234175334.893663,1742622.476302,"ops/s",2
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,87196150.126077,1361458.044941,"ops/s",20
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,6065100.615008,3404.291273,"ops/s",200
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,520915.763862,405.355207,"ops/s",2000
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,5143.164370,0.675277,"ops/s",200000
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,479.520349,0.673647,"ops/s",2000000
+"com.test.mvnmyExample.MyBenchmark.testDOubleNotRand","thrpt",1,200,48.624953,0.182242,"ops/s",20000000
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,242277158.588033,4358802.204105,"ops/s",2
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,101290642.203672,767815.752178,"ops/s",20
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,15702923.996701,25086.916923,"ops/s",200
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,1540098.052322,687.605208,"ops/s",2000
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,15394.003057,9.195753,"ops/s",200000
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,1475.085674,6.619722,"ops/s",2000000
+"com.test.mvnmyExample.MyBenchmark.testIntNotRand","thrpt",1,200,138.653559,1.225219,"ops/s",20000000

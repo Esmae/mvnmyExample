@@ -8,7 +8,6 @@ package com.test.mvnmyExample;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.infra.Blackhole;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -17,15 +16,17 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 @State(Scope.Thread)
 public class MyBenchmark {
 
-	// one way of passing arguments to the benchmarking method
-	@Param({ "1", "10", "100", "1000", "10000" }) // Sets the default if not
-													// overridden (override by
-	// specifying values on command line)
-	public static int size;
-
 	@State(Scope.Thread)
 	public static class MyState {
 		// the four arrays for the four different benchmarking methods
+
+		// one way of passing arguments to the benchmarking method
+		@Param({ "6", "10", "100", "1000", "10000" }) // Sets the default if not
+														// overridden (override
+														// by
+		// specifying values on command line)
+		public static int size;
+
 		int[] theArrayIntNotRand;
 		double[] theArrayDoubleNotRand;
 		int[] theArrayIntRand;
@@ -47,14 +48,14 @@ public class MyBenchmark {
 	@BenchmarkMode(Mode.Throughput) // Throughput is the default
 	@Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	@Measurement(iterations = 20, time = 100, timeUnit = TimeUnit.MILLISECONDS)
-	public void testIntNotRand(Blackhole myBlackhole, MyState theState) {
+	public int testIntNotRand(MyState theState) {
 		// calls the method to be measured, testing an array of ints
 		// 0,1,2,3...etc
 		int theCount = IntTriNum.cumCount(theState.theArrayIntNotRand);
 
-		myBlackhole.consume(theCount);// to defend against dead code
-										// elimination, don't want the JVM to
-										// optimise this
+		return theCount;// to defend against dead code
+						// elimination, don't want the JVM to
+						// optimise this
 	}
 
 	// non-random doubles
@@ -62,14 +63,14 @@ public class MyBenchmark {
 	@BenchmarkMode(Mode.Throughput) // Throughput is the default
 	@Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	@Measurement(iterations = 20, time = 100, timeUnit = TimeUnit.MILLISECONDS)
-	public void testDoubleNotRand(Blackhole myBlackhole, MyState theState) {
+	public double testDoubleNotRand(MyState theState) {
 		// calls the method to be measured, testing an array of doubles
 		// 0,1,2,3...etc
 		double theCount = DoubleTriNum.cumCount(theState.theArrayDoubleNotRand);
 
-		myBlackhole.consume(theCount);// to defend against dead code
-										// elimination, don't want the JVM to
-										// optimise this
+		return theCount;// to defend against dead code
+						// elimination, don't want the JVM to
+						// optimise this
 	}
 
 	// random ints
@@ -77,13 +78,13 @@ public class MyBenchmark {
 	@BenchmarkMode(Mode.Throughput) // Throughput is the default
 	@Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	@Measurement(iterations = 20, time = 100, timeUnit = TimeUnit.MILLISECONDS)
-	public void testIntRand(Blackhole myBlackhole, MyState theState) {
+	public int testIntRand(MyState theState) {
 		// calls the method to be measured, testing an array of random ints
 		int theCount = IntRand.cumCount(theState.theArrayIntRand);
 
-		myBlackhole.consume(theCount);// to defend against dead code
-										// elimination, don't want the JVM to
-										// optimise this
+		return theCount;// to defend against dead code
+						// elimination, don't want the JVM to
+						// optimise this
 	}
 
 	// random doubles
@@ -91,13 +92,13 @@ public class MyBenchmark {
 	@BenchmarkMode(Mode.Throughput) // Throughput is the default
 	@Warmup(iterations = 5, time = 100, timeUnit = TimeUnit.MILLISECONDS)
 	@Measurement(iterations = 20, time = 100, timeUnit = TimeUnit.MILLISECONDS)
-	public void testDoubleRand(Blackhole myBlackhole, MyState theState) {
+	public double testDoubleRand(MyState theState) {
 		// calls the method to be measured, testing an array of random doubles
 		double theCount = DoubleRand.cumCount(theState.theArrayDoubleRand);
 
-		myBlackhole.consume(theCount);// to defend against dead code
-										// elimination, don't want the JVM to
-										// optimise this
+		return theCount;// to defend against dead code
+						// elimination, don't want the JVM to
+						// optimise this
 	}
 
 	public static void main(String[] args) throws RunnerException {
