@@ -23,8 +23,9 @@ public class MyBenchmark {
 		// one way of passing arguments to the benchmarking method
 		@Param({ "6", "10", "100", "1000", "10000" }) // Sets the default if not
 														// overridden (override
-														// by
-		// specifying values on command line)
+														// by specifying values
+														// on command line)
+
 		public static int size;
 
 		int[] theArrayIntNotRand;
